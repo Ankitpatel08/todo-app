@@ -1,0 +1,36 @@
+<div class="container is-medium">
+    <form [formGroup]="todoForm" (submit)="onSubmit()">
+        <div class="field">
+            <label class="label">Task Id</label>
+            <div class="control">
+                <input class="input" type="number" formControlName="taskId">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Task Title</label>
+            <div class="control">
+                <input class="input" type="text" formControlName="taskTitle">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Task Description</label>
+            <div class="control">
+                <input class="input" type="textarea" formControlName="taskDescription">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">is task done?</label>
+            <div class="control">
+                <input class="checkbox" type="checkbox" formControlName="isDone">
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" type="submit">{{isEdit ? 'Edit' : 'Add'}}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="container is-medium">
+    <table class="table is-striped is-fullwidth">
+        <thead>
+            <th>Task ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th colspan=2>CTAs</th>
+        </thead>
+        <tbody >
+            <tr *ngFor="let task of tasks">
+                <td>{{task.taskId}}</td>
+                <td [ngClass]="{'is-done': task.isDone}">{{task.taskTitle}}</td>
+                <td>{{task.taskDescription}}</td>
+                <td><a routerLink="/editTask/{{task.taskId}}">Edit</a></td>
+                <td><a href="#" (click)="onDeleteClick(task.taskId)">delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="columns is-centered">
+        <a class="button is-primary" routerLink='/addTask'>Add Item</a>
+    </div>
+</div>
